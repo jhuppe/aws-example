@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="aws">
+    <head>
+        <title>AWS PRACTICE</title>
+        <link rel="stylesheet" href="style.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js"></script>
+    </head>
+    <body ng-controller="mainCtrl">
+        
+
+
+
+        <div class="content">
+            <div>
+                <h3>Upload Image:</h3>
+                <br>
+                <input type="file" images="images" fileread/>
+            </div>
+            <br>
+            <br>
+            <br>
+            <h3>Photo Album: </h3>
+            <br>
+            <div class="flex-row space-between">
+                <div ng-repeat="image in images">
+
+                    <img class="albumImage" ng-src="{{image.imageUrl}}" ng-click="addImage(image.Location)"/>
+                </div>
+            </div>
+        </div>
+            
+
+
+
+        
+        <script src="app.js"></script>
+        <script src="services/imageService.js"></script>
+        <script src="directives/fileread.js"></script>
+    </body>
+</html>
